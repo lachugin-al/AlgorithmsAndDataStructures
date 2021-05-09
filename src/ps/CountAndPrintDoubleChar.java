@@ -7,6 +7,7 @@ import java.util.Map;
 public class CountAndPrintDoubleChar {
     public static void main(String[] args) {
         countAndPrintDoubleCharAndNum("aabbwwe387udhiwjif");
+        countChar("baaaqqw");
     }
 
     public static void countAndPrintDoubleCharAndNum(String str) {
@@ -36,6 +37,21 @@ public class CountAndPrintDoubleChar {
 
         printArray(temp);
         for (Map.Entry<Character, Integer> entry : myHashMap.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+    }
+
+    private static void countChar(String str) {
+        HashMap<Character, Integer> myHashMap2 = new HashMap<>();
+        int count = 1;
+        for (int i = 0; i < str.length(); i++) {
+            if (myHashMap2.containsKey(str.charAt(i))) {
+                myHashMap2.put(str.charAt(i), myHashMap2.get(str.charAt(i)) + 1);
+            } else {
+                myHashMap2.put(str.charAt(i), count);
+            }
+        }
+        for (Map.Entry<Character, Integer> entry : myHashMap2.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
     }
