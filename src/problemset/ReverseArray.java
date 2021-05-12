@@ -1,4 +1,4 @@
-package ps;
+package problemset;
 
 import java.util.Arrays;
 
